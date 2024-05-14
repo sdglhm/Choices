@@ -184,6 +184,8 @@ export const diff = (
 export const parseCustomProperties = (customProperties): any => {
   if (typeof customProperties !== 'undefined') {
     try {
+      console.log(customProperties);
+      console.log(JSON.parse(customProperties));
       return JSON.parse(customProperties);
     } catch (e) {
       return customProperties;
