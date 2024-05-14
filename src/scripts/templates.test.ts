@@ -713,4 +713,24 @@ describe('templates', () => {
       });
     });
   });
+
+  describe('customProperties', () => {
+    const choices = [
+      {
+        label: 'test',
+        value: 'test',
+        customProperties: {
+          customProp1: 'test1',
+          customProp2: 'test2',
+        },
+      },
+    ];
+
+    it('sets custom properties', () => {
+      const output = templates.option(choices[0]);
+      expect(output.dataset.customProperties).to.equal(
+        JSON.stringify(choices[0].customProperties),
+      );
+    });
+  });
 });
